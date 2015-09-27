@@ -10,6 +10,12 @@ ORDERED_OBJS += \
 "./N25Q.obj" \
 "./Serialize.obj" \
 "./main.obj" \
+"./SPI_FFS/spiffs_cache.obj" \
+"./SPI_FFS/spiffs_check.obj" \
+"./SPI_FFS/spiffs_gc.obj" \
+"./SPI_FFS/spiffs_hal.obj" \
+"./SPI_FFS/spiffs_hydrogen.obj" \
+"./SPI_FFS/spiffs_nucleus.obj" \
 "../lnk_msp430f5438a.cmd" \
 $(GEN_CMDS__FLAG) \
 -l"libmath.a" \
@@ -23,7 +29,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include SPI_FFS/subdir_vars.mk
 -include subdir_rules.mk
+-include SPI_FFS/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -136,7 +144,7 @@ all: MSP430_Micron_SPI_Flash.out
 MSP430_Micron_SPI_Flash.out: $(OBJS) $(CMD_SRCS) $(LD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/bin/cl430" -vmspx --abi=eabi --data_model=restricted --use_hw_mpy=F5 --advice:power="all" -g --define=__MSP430F5438A__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=nofloat -z -m"MSP430_Micron_SPI_Flash.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccsv6/ccs_base/msp430/include" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include" -i"C:/ti/ccsv6/ccs_base/msp430/lib/5xx_6xx_FRxx" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="MSP430_Micron_SPI_Flash_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "MSP430_Micron_SPI_Flash.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/bin/cl430" -vmspx --abi=eabi --data_model=restricted --use_hw_mpy=F5 --advice:power="all" -g --define=__MSP430F5438A__ --diag_warning=225 --display_error_number --diag_wrap=off --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=nofloat -z -m"MSP430_Micron_SPI_Flash.map" --heap_size=1000 --stack_size=1000 --cinit_hold_wdt=on -i"C:/ti/ccsv6/ccs_base/msp430/include" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include" -i"C:/ti/ccsv6/ccs_base/msp430/lib/5xx_6xx_FRxx" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="MSP430_Micron_SPI_Flash_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "MSP430_Micron_SPI_Flash.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -149,8 +157,8 @@ MSP430_Micron_SPI_Flash.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "N25Q.pp" "Serialize.pp" "main.pp" 
-	-$(RM) "N25Q.obj" "Serialize.obj" "main.obj" 
+	-$(RM) "N25Q.pp" "Serialize.pp" "main.pp" "SPI_FFS\spiffs_cache.pp" "SPI_FFS\spiffs_check.pp" "SPI_FFS\spiffs_gc.pp" "SPI_FFS\spiffs_hal.pp" "SPI_FFS\spiffs_hydrogen.pp" "SPI_FFS\spiffs_nucleus.pp" 
+	-$(RM) "N25Q.obj" "Serialize.obj" "main.obj" "SPI_FFS\spiffs_cache.obj" "SPI_FFS\spiffs_check.obj" "SPI_FFS\spiffs_gc.obj" "SPI_FFS\spiffs_hal.obj" "SPI_FFS\spiffs_hydrogen.obj" "SPI_FFS\spiffs_nucleus.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
