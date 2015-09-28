@@ -19,6 +19,9 @@ main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include/stdlib.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include/string.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include/stddef.h
 main.obj: ../SPI_FFS/spiffs_hal.h
+main.obj: ../FAT_FS/ff.h
+main.obj: ../FAT_FS/integer.h
+main.obj: ../FAT_FS/ffconf.h
 
 ../main.c: 
 C:/ti/ccsv6/ccs_base/msp430/include/msp430.h: 
@@ -39,3 +42,6 @@ C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include/stdlib.h:
 C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include/string.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-msp430_4.4.4/include/stddef.h: 
 ../SPI_FFS/spiffs_hal.h: 
+../FAT_FS/ff.h: 
+../FAT_FS/integer.h: 
+../FAT_FS/ffconf.h: 

@@ -110,4 +110,6 @@ S64_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 SPI_FFS \
+FAT_FS/option \
+FAT_FS \
 

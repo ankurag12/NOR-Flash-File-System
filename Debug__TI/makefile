@@ -16,6 +16,10 @@ ORDERED_OBJS += \
 "./SPI_FFS/spiffs_hal.obj" \
 "./SPI_FFS/spiffs_hydrogen.obj" \
 "./SPI_FFS/spiffs_nucleus.obj" \
+"./FAT_FS/option/syscall.obj" \
+"./FAT_FS/option/unicode.obj" \
+"./FAT_FS/diskio.obj" \
+"./FAT_FS/ff.obj" \
 "../lnk_msp430f5438a.cmd" \
 $(GEN_CMDS__FLAG) \
 -l"libmath.a" \
@@ -30,8 +34,12 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include SPI_FFS/subdir_vars.mk
+-include FAT_FS/option/subdir_vars.mk
+-include FAT_FS/subdir_vars.mk
 -include subdir_rules.mk
 -include SPI_FFS/subdir_rules.mk
+-include FAT_FS/option/subdir_rules.mk
+-include FAT_FS/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -157,8 +165,8 @@ MSP430_Micron_SPI_Flash.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "N25Q.pp" "Serialize.pp" "main.pp" "SPI_FFS\spiffs_cache.pp" "SPI_FFS\spiffs_check.pp" "SPI_FFS\spiffs_gc.pp" "SPI_FFS\spiffs_hal.pp" "SPI_FFS\spiffs_hydrogen.pp" "SPI_FFS\spiffs_nucleus.pp" 
-	-$(RM) "N25Q.obj" "Serialize.obj" "main.obj" "SPI_FFS\spiffs_cache.obj" "SPI_FFS\spiffs_check.obj" "SPI_FFS\spiffs_gc.obj" "SPI_FFS\spiffs_hal.obj" "SPI_FFS\spiffs_hydrogen.obj" "SPI_FFS\spiffs_nucleus.obj" 
+	-$(RM) "N25Q.pp" "Serialize.pp" "main.pp" "SPI_FFS\spiffs_cache.pp" "SPI_FFS\spiffs_check.pp" "SPI_FFS\spiffs_gc.pp" "SPI_FFS\spiffs_hal.pp" "SPI_FFS\spiffs_hydrogen.pp" "SPI_FFS\spiffs_nucleus.pp" "FAT_FS\option\syscall.pp" "FAT_FS\option\unicode.pp" "FAT_FS\diskio.pp" "FAT_FS\ff.pp" 
+	-$(RM) "N25Q.obj" "Serialize.obj" "main.obj" "SPI_FFS\spiffs_cache.obj" "SPI_FFS\spiffs_check.obj" "SPI_FFS\spiffs_gc.obj" "SPI_FFS\spiffs_hal.obj" "SPI_FFS\spiffs_hydrogen.obj" "SPI_FFS\spiffs_nucleus.obj" "FAT_FS\option\syscall.obj" "FAT_FS\option\unicode.obj" "FAT_FS\diskio.obj" "FAT_FS\ff.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
