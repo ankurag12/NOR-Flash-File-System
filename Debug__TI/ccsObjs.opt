@@ -1,1 +1,0 @@
-"./N25Q.obj" "./Serialize.obj" "./main.obj" "./SPI_FFS/spiffs_cache.obj" "./SPI_FFS/spiffs_check.obj" "./SPI_FFS/spiffs_gc.obj" "./SPI_FFS/spiffs_hal.obj" "./SPI_FFS/spiffs_hydrogen.obj" "./SPI_FFS/spiffs_nucleus.obj" "./FAT_FS/option/syscall.obj" "./FAT_FS/option/unicode.obj" "./FAT_FS/diskio.obj" "./FAT_FS/ff.obj" "../lnk_msp430f5438a.cmd" -l"libmath.a" -l"libc.a" 

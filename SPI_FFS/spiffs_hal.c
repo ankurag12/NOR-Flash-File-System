@@ -35,6 +35,7 @@ static s32_t my_spiffs_write(u32_t addr, u32_t size, u8_t *src) {
 	return -1;
 }
 
+// WRONG !! SectorErase	 FUNCTION EXPECTS SECTOR NUMBER, NOT ADDRESS
 static s32_t my_spiffs_erase(u32_t addr, u32_t size) {
 	while(size>0) {
 		if(flashDeviceObject.GenOp.SectorErase(addr)!=Flash_Success)

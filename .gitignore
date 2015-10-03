@@ -1,0 +1,8 @@
+.launches
+.project
+.settings
+Debug/*
+Debug__TI/*
+Debug__GNU/*
+.ccsproject
+.cproject
